@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="1061.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: e1d9fa;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="27.0" layoutY="35.0" prefHeight="82.0" prefWidth="1011.0" style="-fx-background-color: #3c2140; -fx-background-radius: 20px;">
+               <children>
+                  <Label layoutX="60.0" layoutY="19.0" text="Hello, " textFill="#e1d9fa">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="151.0" layoutY="19.0" text="Madhushan Tharanga" textFill="#e1d9fa">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="658.0" layoutY="19.0" text="2024/11/23" textFill="#e1d9fa">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="846.0" layoutY="19.0" text="9.11PM" textFill="#e1d9fa">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="27.0" layoutY="181.0" prefHeight="92.0" prefWidth="200.0" style="-fx-background-color: #692553; -fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="34.0" layoutY="24.0" text="Members" textFill="#e1d9fa">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="582.0" layoutY="181.0" prefHeight="92.0" prefWidth="200.0" style="-fx-background-color: #692553; -fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="34.0" layoutY="24.0" text="Members" textFill="#e1d9fa">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="838.0" layoutY="181.0" prefHeight="92.0" prefWidth="200.0" style="-fx-background-color: #692553; -fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="34.0" layoutY="24.0" text="Members" textFill="#e1d9fa">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="301.0" layoutY="181.0" prefHeight="92.0" prefWidth="200.0" style="-fx-background-color: #692553; -fx-background-radius: 30px;">
+               <children>
+                  <Label layoutX="34.0" layoutY="24.0" text="Members" textFill="#e1d9fa">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <BarChart layoutX="27.0" layoutY="295.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <PieChart layoutX="548.0" layoutY="301.0" prefHeight="344.0" prefWidth="483.0" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
