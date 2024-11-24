@@ -28,8 +28,7 @@ public class AttendanceFormController {
     public TextField txtUserId;
     public TextField txtDate;
 
-    public void addNewMemberOnAction(ActionEvent actionEvent) {
-    }
+
 
     public void addNewEquipmentOnAction(MouseEvent mouseEvent) {
     }
@@ -45,5 +44,9 @@ public class AttendanceFormController {
         Parent parent = FXMLLoader.load(resource);
         Scene scene = new Scene(parent);
         stage.setScene(scene);
+    }
+
+    public void backOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("DashboardForm");
     }
 }

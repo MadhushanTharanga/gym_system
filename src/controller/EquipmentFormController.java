@@ -1,11 +1,19 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
 
 public class EquipmentFormController {
     public TextField txtTitle;
@@ -18,9 +26,9 @@ public class EquipmentFormController {
     public TableColumn colTitle;
     public TableColumn colDescription;
     public TableColumn colTools;
+    public BorderPane equipmentContext;
 
-    public void addNewMemberOnAction(ActionEvent actionEvent) {
-    }
+
 
     public void addNewEquipmentOnAction(MouseEvent mouseEvent) {
     }
@@ -29,5 +37,16 @@ public class EquipmentFormController {
     }
 
     public void saveOnAction(ActionEvent actionEvent) {
+    }
+    private void setUi(String location) throws IOException {
+        URL resource = getClass().getResource("/view/" + location + ".fxml");
+        Stage stage = (Stage) equipmentContext.getScene().getWindow();
+        Parent parent = FXMLLoader.load(resource);
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+    }
+
+    public void backOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("DashboardForm");
     }
 }
