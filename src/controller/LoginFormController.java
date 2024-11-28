@@ -1,6 +1,7 @@
 package controller;
 
 import db.CrudUtil;
+import db.Utilities;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import model.User;
 import util.PasswordEncoder;
 
 import java.io.IOException;
@@ -33,20 +35,32 @@ public class LoginFormController {
         }
         String email = txtEmail.getText();
         ResultSet set = CrudUtil.execute("SELECT * FROM user WHERE email=?", email);
-        System.out.println("print1");
+
 
         if (set.next()){
-            System.out.println("print2");
            if ( PasswordEncoder.check(txtPassword.getText(),set.getString("password"))){
-               setUi("DashboardForm");
+               Utilities.user= new User(
+                       set.getString("userId"),
+                       set.getString("name"),
+                       set.getInt("contact"),
+                       set.getString("email"),
+                       set.getString("password"),
+                       set.getString("role"));
+               URL resource = getClass().getResource("/view/" + "DashboardForm" + ".fxml");
+               Stage stage = (Stage) loginContext.getScene().getWindow();
+               Parent parent = FXMLLoader.load(resource);
+               Scene scene = new Scene(parent);
+               stage.setScene(scene);
+               stage.setMaximized(true);
+
            }else {
                new Alert(Alert.AlertType.WARNING,"Wrong Password!!", ButtonType.OK).show();
                return;
            }
         }else {
-            System.out.println("print4");
             new Alert(Alert.AlertType.WARNING,"User email not found!", ButtonType.OK).show();
         }
+
     }
 
     public void dontHaveAccOnAction(ActionEvent actionEvent) throws IOException {
@@ -59,5 +73,6 @@ public class LoginFormController {
         Parent parent = FXMLLoader.load(resource);
         Scene scene = new Scene(parent);
         stage.setScene(scene);
+        stage.centerOnScreen();
     }
 }

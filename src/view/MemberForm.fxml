@@ -64,14 +64,6 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                  <ImageView fitHeight="43.0" fitWidth="47.0" layoutX="21.0" layoutY="14.0" onDragDetected="#addNewMemberOnAction" pickOnBounds="true" preserveRatio="true">
-                                      <image>
-                                          <Image url="@../image/square-plus-solid.png" />
-                                      </image>
-                                      <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                      </cursor>
-                                  </ImageView>
                         <Button layoutX="153.0" layoutY="17.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: #000; -fx-background-radius: 8px;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -88,7 +80,7 @@
                         </Pane>
                     </right>
                <BorderPane.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="10.0" top="10.0" />
                </BorderPane.margin>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -98,57 +90,47 @@
             <center>
                 <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <top>
-                        <GridPane hgap="10.0" prefHeight="311.0" prefWidth="545.0" vgap="10.0" BorderPane.alignment="CENTER">
+                        <GridPane hgap="10.0" prefHeight="311.0" prefWidth="1175.0" vgap="10.0" BorderPane.alignment="CENTER">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="76.0" minHeight="6.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="76.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="137.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="76.0" minHeight="6.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <TextField fx:id="txtName" prefHeight="49.0" prefWidth="273.0" promptText="Full Name" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <TextField fx:id="txtName" prefHeight="73.0" prefWidth="540.0" promptText="Full Name" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.columnIndex="1">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font name="System Bold" size="20.0" />
                                     </font>
                                 </TextField>
-                                <TextField fx:id="txtContact" prefHeight="49.0" prefWidth="272.0" promptText="Contact" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.rowIndex="1">
+                                <TextField fx:id="txtContact" prefHeight="73.0" prefWidth="540.0" promptText="Contact" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font name="System Bold" size="20.0" />
                                     </font>
                                 </TextField>
-                                <TextField fx:id="txtEmail" prefHeight="49.0" prefWidth="273.0" promptText="Email" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <TextField fx:id="txtEmail" prefHeight="73.0" prefWidth="540.0" promptText="Email" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.rowIndex="1">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font name="System Bold" size="20.0" />
                                     </font>
                                 </TextField>
-                                <TextField fx:id="txtPassword" prefHeight="49.0" prefWidth="272.0" promptText="Password" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.rowIndex="2">
-                                    <padding>
-                                        <Insets left="10.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="13.0" />
-                                    </font>
-                                </TextField>
-                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                     <right>
                                         <Button fx:id="saveOrUpdateMember" mnemonicParsing="false" onAction="#saveMemberOnAction" prefHeight="49.0" prefWidth="271.0" style="-fx-background-color: #692553; -fx-background-radius: 15px;" text="Save Member" textFill="WHITE" BorderPane.alignment="CENTER">
                                             <font>
-                                                <Font name="System Bold" size="14.0" />
+                                                <Font name="System Bold" size="18.0" />
                                             </font>
                                             <cursor>
                                                 <Cursor fx:constant="HAND" />
@@ -156,17 +138,23 @@
                                         </Button>
                                     </right>
                                 </BorderPane>
-                                <TextField fx:id="txtSearchHere" prefHeight="54.0" prefWidth="583.0" promptText="Search Here" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.rowIndex="5">
+                                <TextField fx:id="txtSearchHere" prefHeight="48.0" prefWidth="583.0" promptText="Search Here" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.rowIndex="3">
                                     <GridPane.margin>
                                         <Insets />
                                     </GridPane.margin>
                                     <padding>
                                         <Insets left="10.0" />
-                                    </padding></TextField>
-                                <TextField fx:id="txtMemberId" disable="true" editable="false" prefHeight="49.0" prefWidth="268.0" promptText="Member ID" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;">
+                                    </padding>
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                                <TextField fx:id="txtMemberId" editable="false" prefHeight="73.0" prefWidth="540.0" promptText="Member ID" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
                                 </TextField>
                             </children>
                             <BorderPane.margin>
@@ -179,10 +167,9 @@
                             <columns>
                                 <TableColumn fx:id="colMemberId" prefWidth="138.0" text="ID" />
                                 <TableColumn fx:id="colName" prefWidth="203.0" text="Full Name" />
-                                <TableColumn fx:id="colContact" prefWidth="159.0" text="Contact" />
-                                <TableColumn fx:id="colEmail" prefWidth="177.0" text="Email" />
-                                <TableColumn fx:id="colPassword" prefWidth="211.0" text="Password" />
-                                <TableColumn fx:id="colTools" minWidth="0.0" prefWidth="286.0" text="Tools" />
+                                <TableColumn fx:id="colContact" prefWidth="233.0" text="Contact" />
+                                <TableColumn fx:id="colEmail" prefWidth="346.0" text="Email" />
+                                <TableColumn fx:id="colTools" minWidth="0.0" prefWidth="255.0" text="Tools" />
                             </columns>
                      <padding>
                         <Insets bottom="10.0" right="10.0" top="10.0" />

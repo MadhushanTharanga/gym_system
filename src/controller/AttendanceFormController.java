@@ -1,19 +1,21 @@
 package controller;
 
+import db.DatabaseAccessCode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import model.Attendance;
+import model.User;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLException;
 
 public class AttendanceFormController {
     public TableView tblContext;
@@ -36,7 +38,15 @@ public class AttendanceFormController {
     public void resetOnAction(ActionEvent actionEvent) {
     }
 
-    public void saveOnAction(ActionEvent actionEvent) {
+    public void saveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        Attendance attendance = new Attendance();
+        attendance.setaId(txtUserId.getText());
+        attendance.setDate(Date.valueOf(txtDate.getText()));
+        attendance.setUser_userId(txtUserId.getText());
+
+        if (DatabaseAccessCode.saveAttendance(attendance)){
+            new Alert(Alert.AlertType.INFORMATION,"Save Attendance!",ButtonType.OK).show();
+        }
     }
     private void setUi(String location) throws IOException {
         URL resource = getClass().getResource("/view/" + location + ".fxml");

@@ -64,19 +64,11 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Button>
-                                  <ImageView fitHeight="43.0" fitWidth="42.0" layoutX="30.0" layoutY="14.0" onDragDetected="#addNewEquipmentOnAction" pickOnBounds="true" preserveRatio="true">
-                                      <image>
-                                          <Image url="@../image/square-plus-solid.png" />
-                                      </image>
-                                      <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                      </cursor>
-                                  </ImageView>
                         <Button layoutX="156.0" layoutY="17.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: #000; -fx-background-radius: 8px;">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../image/images.png" />
+                                    <Image url="@../image/images__1_-removebg-preview.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -110,20 +102,20 @@
                                 <RowConstraints maxHeight="76.0" minHeight="6.0" prefHeight="53.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <TextField fx:id="txtDate" prefHeight="49.0" prefWidth="272.0" promptText="Date" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.rowIndex="1">
+                                <TextField fx:id="txtDate" prefHeight="73.0" prefWidth="540.0" promptText="Date" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.rowIndex="1">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font name="System Bold" size="20.0" />
                                     </font>
                                 </TextField>
-                                <TextField fx:id="txtUserId" prefHeight="49.0" prefWidth="273.0" promptText="User Id" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <TextField fx:id="txtUserId" prefHeight="73.0" prefWidth="540.0" promptText="User Id" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
                                     <font>
-                                        <Font size="13.0" />
+                                        <Font name="System Bold" size="20.0" />
                                     </font>
                                 </TextField>
                                 <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -138,17 +130,23 @@
                                         </Button>
                                     </right>
                                 </BorderPane>
-                                <TextField fx:id="txtSearchHere" prefHeight="41.0" prefWidth="583.0" promptText="Search Here" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.rowIndex="3">
+                                <TextField fx:id="txtSearchHere" prefHeight="60.0" prefWidth="583.0" promptText="Search Here" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.rowIndex="3">
                                     <GridPane.margin>
                                         <Insets />
                                     </GridPane.margin>
                                     <padding>
                                         <Insets left="10.0" />
-                                    </padding></TextField>
-                                <TextField fx:id="txtAttendId" disable="true" editable="false" prefHeight="49.0" prefWidth="268.0" promptText="Attendance ID" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;">
+                                    </padding>
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                                <TextField fx:id="txtAttendId" editable="false" prefHeight="73.0" prefWidth="540.0" promptText="Attendance ID" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
                                 </TextField>
                             </children>
                             <BorderPane.margin>

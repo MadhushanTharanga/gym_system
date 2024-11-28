@@ -68,5 +68,6 @@ public class RegisterFormController {
         Parent parent = FXMLLoader.load(resource);
         Scene scene = new Scene(parent);
         stage.setScene(scene);
+        stage.centerOnScreen();
     }
 }
