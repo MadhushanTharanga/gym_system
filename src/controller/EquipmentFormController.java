@@ -1,5 +1,6 @@
 package controller;
 
+import db.DatabaseAccessCode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import model.Equipment;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,22 +23,21 @@ public class EquipmentFormController {
     public Button saveOrUpdateMember;
     public TextField txtSearchHere;
     public TextField txtId;
-    public TableView tblContext;
     public TableColumn colId;
     public TableColumn colTitle;
     public TableColumn colDescription;
     public TableColumn colTools;
     public BorderPane equipmentContext;
-
-
-
-    public void addNewEquipmentOnAction(MouseEvent mouseEvent) {
-    }
+    public TableView tblEquipment;
 
     public void resetOnAction(ActionEvent actionEvent) {
+        clear();
     }
 
     public void saveOnAction(ActionEvent actionEvent) {
+//        Equipment equipment = new Equipment();
+//        equipment.seteId(txtId.ge);
+//        if (DatabaseAccessCode.saveEquipment())
     }
     private void setUi(String location) throws IOException {
         URL resource = getClass().getResource("/view/" + location + ".fxml");
@@ -48,5 +49,11 @@ public class EquipmentFormController {
 
     public void backOnAction(ActionEvent actionEvent) throws IOException {
         setUi("DashboardForm");
+    }
+    public void clear(){
+        txtId.clear();
+        txtDescription.clear();
+        txtTitle.clear();
+        txtSearchHere.clear();
     }
 }

@@ -114,9 +114,6 @@ public class MemberFormController {
         }
     }
 
-    public void addNewMemberOnAction(ActionEvent actionEvent) {
-    }
-
     public void resetOnAction(ActionEvent actionEvent) {
         clear();
     }
