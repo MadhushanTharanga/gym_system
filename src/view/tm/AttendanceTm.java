@@ -5,27 +5,27 @@ import javafx.scene.control.ButtonBar;
 import java.util.Date;
 
 public class AttendanceTm {
-    private String aId;
+    private String id;
     private Date date;
     private String user_userId;
     private ButtonBar btn;
 
-
     public AttendanceTm() {
     }
-    public AttendanceTm(String aId, Date date, String user_userId, ButtonBar btn) {
-        this.aId = aId;
+
+    public AttendanceTm(String id, Date date, String user_userId, ButtonBar btn) {
+        this.id = id;
         this.date = date;
         this.user_userId = user_userId;
         this.btn = btn;
     }
 
-    public String getaId() {
-        return aId;
+    public String getId() {
+        return id;
     }
 
-    public void setaId(String aId) {
-        this.aId = aId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Date getDate() {

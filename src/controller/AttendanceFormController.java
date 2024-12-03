@@ -44,9 +44,10 @@ public class AttendanceFormController {
 
     public void initialize() throws SQLException, ClassNotFoundException {
         setID();
-        colId.setCellValueFactory(new PropertyValueFactory<>("aId"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colUserId.setCellValueFactory(new PropertyValueFactory<>("user_userId"));
+        colTools.setCellValueFactory(new PropertyValueFactory<>("btn"));
 
         cmbMember.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             memberId=newValue;
@@ -124,22 +125,19 @@ public class AttendanceFormController {
 
     ObservableList <AttendanceTm> observableList= FXCollections.observableArrayList();
     private void loadAttendanceTable() throws SQLException, ClassNotFoundException {
-        ResultSet set = DatabaseAccessCode.getAllAttendance(txtAttendId.getText());
+        observableList.clear();
+        ResultSet set = DatabaseAccessCode.findAllAttendance();
         while (set.next()){
             ButtonBar buttonBar = new ButtonBar();
             Button btn1 = new Button("Delete");
-            Button btn2 = new Button("Update");
-            buttonBar.getButtons().addAll(btn1,btn2);
+            buttonBar.getButtons().addAll(btn1);
 
-            AttendanceTm attendanceTm = new AttendanceTm();
-            attendanceTm.setaId(set.getString(1));
-            attendanceTm.setDate(set.getDate(2));
-            attendanceTm.setUser_userId(set.getString(3));
-            attendanceTm.setBtn(buttonBar);
+            AttendanceTm attendanceTm = new AttendanceTm(set.getString(1),set.getDate(2), set.getString(3),buttonBar);
+
 
             btn1.setOnAction(e->{
                 try {
-                    if (DatabaseAccessCode.deleteAttendanceById(attendanceTm.getaId())){
+                    if (DatabaseAccessCode.deleteAttendanceById(attendanceTm.getId())){
                         new Alert(Alert.AlertType.INFORMATION,"Delete Successfully!").show();
                         loadAttendanceTable();
                     }else {
@@ -152,27 +150,13 @@ public class AttendanceFormController {
                 }
             });
 
-            btn2.setOnAction(e->{
-                try {
-                    ResultSet set1 = DatabaseAccessCode.findAttendanceById(attendanceTm.getaId());
-                    while (set1.next()){
-                        txtAttendId.setText(set1.getString(1));
-                        txtDate.setText(String.valueOf(set1.getDate(2)));
-                        txtUserId.setText(set1.getString(3));
-
-                        saveOrUpdateAttendance.setText("Update Attendance");
-                        return;
-                    }
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                } catch (ClassNotFoundException ex) {
-                    throw new RuntimeException(ex);
-                }
-            });
+            observableList.add(attendanceTm);
         }
+        tblContext.setItems(observableList);
     }
 
     public void resetOnAction(ActionEvent actionEvent) {
+
     }
 
     public void saveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
@@ -183,6 +167,7 @@ public class AttendanceFormController {
 
         if (DatabaseAccessCode.saveAttendance(attendance)){
             new Alert(Alert.AlertType.INFORMATION,"Save Attendance!",ButtonType.OK).show();
+            loadAttendanceTable();
         }
     }
     private void setUi(String location) throws IOException {
@@ -196,4 +181,5 @@ public class AttendanceFormController {
     public void backOnAction(ActionEvent actionEvent) throws IOException {
         setUi("DashboardForm");
     }
+
 }

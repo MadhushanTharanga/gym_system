@@ -60,4 +60,7 @@ public class DatabaseAccessCode {
     public static <T> T findAllMember() throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("SELECT * FROM user WHERE role=?","MEMBER");
     }
+    public static <T> T findAllAttendance() throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("SELECT * FROM attendance");
+    }
 }
