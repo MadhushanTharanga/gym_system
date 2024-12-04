@@ -54,18 +54,6 @@
                     <right>
                         <Pane prefHeight="91.0" prefWidth="215.0" BorderPane.alignment="CENTER">
                             <children>
-                                <Button layoutX="91.0" layoutY="17.0" mnemonicParsing="false" onAction="#resetOnAction" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: #000; -fx-background-radius: 8px;">
-                                    <graphic>
-                                        <ImageView fitHeight="32.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@../image/restart_alt_50dp_FFF_FILL0_wght400_GRAD0_opsz48.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                </Button>
                         <Button layoutX="156.0" layoutY="17.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: #000; -fx-background-radius: 8px;">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -98,14 +86,16 @@
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="112.0" minHeight="6.0" prefHeight="112.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="115.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="112.0" minHeight="6.0" prefHeight="82.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                <TextField fx:id="txtSearchHere" prefHeight="60.0" prefWidth="583.0" promptText="Search Here" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.rowIndex="3">
+                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <ComboBox fx:id="cmbMember" prefHeight="73.0" prefWidth="540.0" style="-fx-background-color: #3c2140; -fx-background-radius: 15px; -fx-text-fill: white; -fx-prompt-text-fill: gray;" BorderPane.alignment="CENTER" />
+                           </center></BorderPane>
+                                <TextField fx:id="txtSearchHere" prefHeight="60.0" prefWidth="583.0" promptText="Search Here" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.rowIndex="2">
                                     <GridPane.margin>
                                         <Insets />
                                     </GridPane.margin>
@@ -123,9 +113,9 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                                 </TextField>
-                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <right>
-                                        <Button fx:id="saveOrUpdateAttendance" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="49.0" prefWidth="318.0" style="-fx-background-color: #692553; -fx-background-radius: 15px;" text="Save Attendance" textFill="WHITE" BorderPane.alignment="CENTER">
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <center>
+                                        <Button fx:id="saveOrUpdateAttendance" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="49.0" prefWidth="311.0" style="-fx-background-color: #692553; -fx-background-radius: 15px;" text="Save Attendance" textFill="WHITE" BorderPane.alignment="CENTER">
                                             <font>
                                                 <Font name="System Bold" size="18.0" />
                                             </font>
@@ -133,10 +123,13 @@
                                                 <Cursor fx:constant="HAND" />
                                             </cursor>
                                         </Button>
-                           </right>
+                           </center>
                         </BorderPane>
-                        <DatePicker fx:id="datePicker" prefHeight="53.0" prefWidth="349.0" promptText="Date" GridPane.rowIndex="1" />
-                        <ComboBox fx:id="cmbMember" prefHeight="67.0" prefWidth="490.0" GridPane.columnIndex="1" />
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <left>
+                              <DatePicker fx:id="datePicker" prefHeight="52.0" prefWidth="596.0" promptText="Date" style="-fx-background-color: #3c2140;" BorderPane.alignment="CENTER" />
+                           </left>
+                        </BorderPane>
                             </children>
                             <BorderPane.margin>
                                 <Insets bottom="10.0" />

@@ -96,13 +96,12 @@
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="76.0" minHeight="6.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="151.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="151.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="96.0" minHeight="6.0" prefHeight="82.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <TextField fx:id="txtTitle" prefHeight="73.0" prefWidth="540.0" promptText="Title" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.rowIndex="1">
+                                <TextField fx:id="txtTitle" prefHeight="73.0" prefWidth="540.0" promptText="Title" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.columnIndex="1">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
@@ -110,7 +109,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </TextField>
-                                <TextField fx:id="txtDescription" prefHeight="73.0" prefWidth="540.0" promptText="Description" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <TextField fx:id="txtDescription" prefHeight="73.0" prefWidth="540.0" promptText="Description" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.rowIndex="1">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
@@ -118,19 +117,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </TextField>
-                                <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <right>
-                                        <Button fx:id="saveOrUpdateMember" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="49.0" prefWidth="271.0" style="-fx-background-color: #692553; -fx-background-radius: 15px;" text="Save Equipment" textFill="WHITE" BorderPane.alignment="CENTER">
-                                            <font>
-                                                <Font name="System Bold" size="18.0" />
-                                            </font>
-                                            <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                            </cursor>
-                                        </Button>
-                           </right>
-                                </BorderPane>
-                                <TextField fx:id="txtSearchHere" prefHeight="53.0" prefWidth="583.0" promptText="Search Here" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;" GridPane.rowIndex="3">
+                                <TextField fx:id="txtSearchHere" prefHeight="53.0" prefWidth="583.0" promptText="Search Here" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;" GridPane.rowIndex="2">
                                     <GridPane.margin>
                                         <Insets />
                                     </GridPane.margin>
@@ -140,7 +127,7 @@
                            <font>
                               <Font size="20.0" />
                            </font></TextField>
-                                <TextField fx:id="txtId" disable="true" editable="false" prefHeight="73.0" prefWidth="540.0" promptText="Equipment ID" style="-fx-background-radius: 15px; -fx-background-color: #3c2140;">
+                                <TextField fx:id="txtId" editable="false" prefHeight="73.0" prefWidth="540.0" promptText="Equipment ID" style="-fx-background-radius: 15px; -fx-background-color: #3c2140; -fx-text-fill: #DEE3EA;">
                                     <padding>
                                         <Insets left="10.0" />
                                     </padding>
@@ -148,6 +135,18 @@
                               <Font size="20.0" />
                            </font>
                                 </TextField>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <center>
+                                        <Button fx:id="saveOrUpdateMember" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="67.0" prefWidth="344.0" style="-fx-background-color: #692553; -fx-background-radius: 15px;" text="Save Equipment" textFill="WHITE" BorderPane.alignment="CENTER">
+                                            <font>
+                                                <Font name="System Bold" size="20.0" />
+                                            </font>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </Button>
+                           </center>
+                        </BorderPane>
                             </children>
                             <BorderPane.margin>
                                 <Insets bottom="10.0" />

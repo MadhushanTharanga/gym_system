@@ -43,6 +43,9 @@ public class DatabaseAccessCode {
     public static boolean deleteAttendanceById(String id) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("DELETE FROM attendance WHERE aId=?",id);
     }
+    public static boolean deleteEquipmentById(String id) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("DELETE FROM equipments WHERE eId=?",id);
+    }
     public static <T> T findAttendanceById(String id) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("SELECT * FROM attendance WHERE aId=?",id);
     }
@@ -62,5 +65,8 @@ public class DatabaseAccessCode {
     }
     public static <T> T findAllAttendance() throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("SELECT * FROM attendance");
+    }
+    public static <T> T findAllEquipment() throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("SELECT * FROM equipments");
     }
 }

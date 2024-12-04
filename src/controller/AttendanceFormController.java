@@ -164,10 +164,17 @@ public class AttendanceFormController {
         attendance.setaId(txtAttendId.getText());
         attendance.setDate(Date.valueOf(datePicker.getValue()));
         attendance.setUser_userId(memberId);
-
-        if (DatabaseAccessCode.saveAttendance(attendance)){
-            new Alert(Alert.AlertType.INFORMATION,"Save Attendance!",ButtonType.OK).show();
-            loadAttendanceTable();
+        if (saveOrUpdateAttendance.equals("Save Attendance")){
+            if (DatabaseAccessCode.saveAttendance(attendance)){
+                new Alert(Alert.AlertType.INFORMATION,"Save Attendance!",ButtonType.OK).show();
+                loadAttendanceTable();
+            }
+        }else {
+            if(DatabaseAccessCode.updateAttendanceById(attendance)){
+                new Alert(Alert.AlertType.INFORMATION,"Attendance Updated!!",ButtonType.OK).show();
+            }else {
+                new Alert(Alert.AlertType.INFORMATION,"Attendance Updated!!",ButtonType.OK).show();
+            }
         }
     }
     private void setUi(String location) throws IOException {
