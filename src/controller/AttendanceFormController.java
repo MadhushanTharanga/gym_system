@@ -166,8 +166,10 @@ public class AttendanceFormController {
         attendance.setUser_userId(memberId);
         if (saveOrUpdateAttendance.equals("Save Attendance")){
             if (DatabaseAccessCode.saveAttendance(attendance)){
+
                 new Alert(Alert.AlertType.INFORMATION,"Save Attendance!",ButtonType.OK).show();
                 loadAttendanceTable();
+
             }
         }else {
             if(DatabaseAccessCode.updateAttendanceById(attendance)){
@@ -187,6 +189,12 @@ public class AttendanceFormController {
 
     public void backOnAction(ActionEvent actionEvent) throws IOException {
         setUi("DashboardForm");
+    }
+
+    public void clear(){
+        txtAttendId.clear();
+        cmbMember.getItems().clear();
+        datePicker.setValue(null);
     }
 
 }

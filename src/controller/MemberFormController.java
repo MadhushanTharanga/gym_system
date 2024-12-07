@@ -131,6 +131,7 @@ public class MemberFormController {
 
             if (DatabaseAccessCode.saveMember(user)){
                 loadMemberTable();
+                clear();
                 new Alert(Alert.AlertType.INFORMATION,"Saved User!",ButtonType.OK).show();
 
             }else {
@@ -140,6 +141,7 @@ public class MemberFormController {
             if (DatabaseAccessCode.updateMemberById(user)){
                 new Alert(Alert.AlertType.INFORMATION,"Updated!!",ButtonType.OK).show();
                 loadMemberTable();
+                clear();
                 saveOrUpdateMember.setText("Save Member");
             }else {
                 new Alert(Alert.AlertType.ERROR,"Something went wrong",ButtonType.OK).show();
