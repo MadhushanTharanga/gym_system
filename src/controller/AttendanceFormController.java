@@ -164,12 +164,12 @@ public class AttendanceFormController {
         attendance.setaId(txtAttendId.getText());
         attendance.setDate(Date.valueOf(datePicker.getValue()));
         attendance.setUser_userId(memberId);
-        if (saveOrUpdateAttendance.equals("Save Attendance")){
+        if (saveOrUpdateAttendance.getText().equalsIgnoreCase("Save Attendance")){
             if (DatabaseAccessCode.saveAttendance(attendance)){
-
                 new Alert(Alert.AlertType.INFORMATION,"Save Attendance!",ButtonType.OK).show();
                 loadAttendanceTable();
-
+                clear();
+                setID();
             }
         }else {
             if(DatabaseAccessCode.updateAttendanceById(attendance)){
@@ -192,9 +192,7 @@ public class AttendanceFormController {
     }
 
     public void clear(){
-        txtAttendId.clear();
         cmbMember.getItems().clear();
         datePicker.setValue(null);
     }
-
 }
